@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout.html}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<div layout:fragment="content">
+	
+		<div class="alert alert-primary" th:if="${message != null}"
+			th:text="${message}"></div>
+		<form method="POST" th:object="${danceclass}"
+			th:action="@{/danceclass/new}">
+			<input type="hidden" th:field="*{id}"></input> 
+			Modality: 
+			<select	th:field="*{modality}" required>
+				<option value="Ballet">Ballet</option>
+				<option value="Ballroom">Ballroom</option>
+				<option value="Belly Dance">Belly Dance</option>
+				<option value="Jazz">Jazz</option>
+				<option value="Street Dance">Street Dance</option>
+				<option value="Tap Dance">Tap Dance</option>
+			</select>
+			<div class="text-danger" th:if="${#fields.hasErrors('modality')}"
+				th:errors="*{modality}"></div>
+			Fee: <input step="0.01" min="0.01" type="number" th:field="*{fee}"></input> 
+			Schedule: <select
+				th:field="*{Schedule}" required>
+				<option value="Monday">Monday</option>
+				<option value="Tuesday">Tuesday</option>
+				<option value="Wednesday">Wednesday</option>
+				<option value="Thursday">Thursday</option>
+				<option value="Friday">Friday</option>
+				<option value="Saturday">Saturday</option>
+			</select>
+			<button type="submit" class="btn btn-primary btn-sm">Save</button>
+		</form>
+	
+</div>
+</html>
