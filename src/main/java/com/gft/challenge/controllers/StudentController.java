@@ -26,23 +26,6 @@ public class StudentController {
 	DanceclassService danceclassService;	
 	
 		
-	/*
-	 * @RequestMapping(method= RequestMethod.GET, path="/get") public ModelAndView
-	 * getStudent(@RequestParam Long id) {
-	 * 
-	 * ModelAndView mv = new ModelAndView("/");
-	 * 
-	 * try {
-	 * 
-	 * Student student = studentService.getStudent(id);
-	 * 
-	 * mv.addObject("student", student);
-	 * 
-	 * }catch(Exception e) { mv.addObject("message", e.getMessage()); }
-	 * 
-	 * return mv; }
-	 */
-		
 	@RequestMapping(method= RequestMethod.GET, path="/new")
 	public ModelAndView studentForm() {
 		
