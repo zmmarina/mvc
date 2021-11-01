@@ -13,6 +13,6 @@ import com.gft.challenge.entities.Student;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 	
 	@Query(value="select * from Student s where s.name like %:name%", nativeQuery=true)
-	List<Student> findStudentByName(@Param("name") String name);
+	List<Student> findStudentByName(@Param("name") String name);	
 
 }

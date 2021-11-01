@@ -25,7 +25,8 @@
 			<div class="text-danger" th:if="${#fields.hasErrors('modality')}"
 				th:errors="*{modality}"></div>
 			Fee: <input class="form-control col-md-4"step="0.01" min="0.01" type="number" th:field="*{fee}"></input> 
-			Schedule: <select class="form-control col-md-4 mb-3"
+			<div>
+			Schedule:  <select class="form-control col-md-4 mb-3"
 				th:field="*{Schedule}" required>
 				<option value="Monday">Monday</option>
 				<option value="Tuesday">Tuesday</option>
@@ -33,7 +34,8 @@
 				<option value="Thursday">Thursday</option>
 				<option value="Friday">Friday</option>
 				<option value="Saturday">Saturday</option>
-			</select>
+						</select> 
+			</div>			
 			<button type="submit" class="btn btn-primary btn-sm">Save</button>
 		</form>
 	

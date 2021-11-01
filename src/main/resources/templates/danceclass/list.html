@@ -35,7 +35,7 @@
 						<td th:text="${danceclass.modality}"></td>
 						<td th:text="'R$' + ${#numbers.formatDecimal(danceclass.fee, 0, 'POINT', 2, 'COMMA')}"></td>
 						<td th:text="${danceclass.schedule}"></td>
-						<td></td>
+					<td></td>
 						<td><a class="btn btn-primary btn-sm"
 							th:href="@{/danceclass/edit(id=${danceclass.id})}">Edit</a> <a
 							class="btn btn-danger btn-sm" data-toggle="modal"
@@ -63,6 +63,9 @@
 								</div>
 							</div></td>
 					</tr>
+						<tr th:each="student: ${students}">
+							<td th:text="${student.danceclass}"></td>
+						</tr>
 				</tbody>
 			</table>
 		</div>

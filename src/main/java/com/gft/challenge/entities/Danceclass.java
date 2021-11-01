@@ -22,7 +22,7 @@ public class Danceclass {
 	private String schedule;		
 	
 	@OneToMany(mappedBy = "danceclass")
-	private List<Student> listOfStudentsClass;
+	private List<Student> students;
 	
 	
 	public Long getId() {
@@ -48,7 +48,13 @@ public class Danceclass {
 	}
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
-	}	
-			
-
+	}
+	public List<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+	
+	
 }

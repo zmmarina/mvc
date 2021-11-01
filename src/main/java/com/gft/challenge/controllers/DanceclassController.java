@@ -30,6 +30,7 @@ public class DanceclassController {
 		
 		ModelAndView mv = new ModelAndView("danceclass/form.html");
 		mv.addObject("danceclass", new Danceclass());
+		mv.addObject("list", studentService.studentList());
 		
 		return mv;
 	}
@@ -86,8 +87,8 @@ public class DanceclassController {
 			mv.addObject("message", e.getMessage());
 		}
 		
-		mv.addObject("danceclass", danceclass);
-		mv.addObject("listofstudents", studentService.studentList());
+		mv.addObject("danceclass", danceclass);	
+		mv.addObject("students", studentService.studentList());
 		
 		return mv;
 	}
@@ -106,5 +107,5 @@ public class DanceclassController {
 			
 		return mv;
 	}
-
+	
 }
