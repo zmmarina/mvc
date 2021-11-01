@@ -4,9 +4,7 @@ This project was developed using MVC.
 
  <h2> :pencil: Features </h2>
 <ul>
-  <li>CRUD for all ent</li>
-  <li>Find dancer by ID</li>
-  <li>Delete dancer by ID</li>
+  <li>CRUD for all entities</li> 
 </ul>
 
  <h2> :wrench: Main Tools </h2>
